@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peerawit Lakhampa - Creative Frontend Developer</title>
+    <meta name="description" content="Frontend Developer specializing in creating immersive web experiences with modern JavaScript frameworks and creative animations">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Mono&display=swap">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    
+    <!-- Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">
+                <h3>PL</h3>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <button class="mobile-menu" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="subtitle">Hi, my name is</span>
+            <h1>Peerawit Lakhampa</h1>
+            <h2 class="hero-heading">I build things for the web.</h2>
+            <p class="hero-description">
+                I'm a frontend developer specializing in building exceptional digital experiences.
+                Currently, I'm focused on building accessible, human-centered products.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary">View My Work</a>
+                <a href="#contact" class="btn secondary">Get In Touch</a>
+            </div>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+        <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content grid-2">
+                <div class="about-text">
+                    <p>Hello! My name is Peerawit, and I enjoy creating things that live on the internet. My interest in web development started back in 2015 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!</p>
+                    <p>Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences.</p>
+                    <p>Here are a few technologies I've been working with recently:</p>
+                    <ul class="skills-list">
+                        <li>JavaScript (ES6+)</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>TypeScript</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="profile.jpg" alt="Profile picture">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <h2>Where I've Worked</h2>
+            <div class="experience-tabs">
+                <div class="tab-list">
+                    <button class="tab-button active" data-tab="company1">TechCorp</button>
+                    <button class="tab-button" data-tab="company2">DigitalAgency</button>
+                    <button class="tab-button" data-tab="company3">StartupX</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-panel active" id="company1">
+                        <h3>Senior Frontend Developer @ TechCorp</h3>
+                        <p class="date">January 2022 - Present</p>
+                        <ul>
+                            <li>Led the frontend development of a major e-commerce platform serving 1M+ users</li>
+                            <li>Implemented modern web technologies resulting in 40% performance improvement</li>
+                            <li>Mentored junior developers and conducted code reviews</li>
+                        </ul>
+                    </div>
+                    <!-- More experience tabs -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2>Some Things I've Built</h2>
+            <div class="projects-grid">
+                <article class="project-card featured">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-links">
+                                <a href="https://github.com/Mindenry/Reserve_MeetingRoom" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">E-commerce Platform</h3>
+                        <div class="project-description">
+                            <p>A feature-rich e-commerce platform built with React and Node.js. Includes real-time inventory management, payment processing, and an admin dashboard.</p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <li>OracleSQL</li>
+                        </ul>
+                    </div>
+                    <div class="project-image">
+                        <img src="reserve.png" alt="Project screenshot">
+                    </div>
+                </article>
+                <!-- More project cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <div class="skill-items">
+                        <div class="skill-item" data-skill="HTML5">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item" data-skill="CSS3">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                    </div>
+                    <div class="skill-item" data-skill="JavaScript">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                </div>
+                <div class="skill-item" data-skill="React">
+                    <i class="fab fa-react"></i>
+                    <span>React</span>
+            </div>
+            <div class="skill-item" data-skill="Sass">
+                <i class="fab fa-sass"></i>
+                <span>Sass</span>
+        </div>
+        <div class="skill-item" data-skill="Bootstrap">
+            <i class="fab fa-bootstrap"></i>
+            <span>Bootstrap</span>
+        </div>
+        <div class="skill-item" data-skill="Tailwind CSS">
+            <i class="fas fa-wind"></i>
+            <span>Tailwind CSS</span>
+        </div>
+        <div class="skill-item" data-skill="TypeScript">
+            <i class="fab fa-js"></i>
+            <span>TypeScript</span>
+        </div>
+        <div class="skill-item" data-skill="Next.js">
+            <i class="fab fa-react"></i>
+            <span>Next.js</span>
+        </div>
+        <div class="skill-item" data-skill="Gatsby">
+            <i class="fab fa-react"></i>
+            <span>Gatsby</span>
+        </div>
+        <div class="skill-item" data-skill="GraphQL">
+            <i class="fas fa-project-diagram"></i>
+            <span>GraphQL</span>
+        </div>
+        <div class="skill-item" data-skill="D3.js">
+            <i class="fas fa-chart-line"></i>
+            <span>D3.js</span>
+        </div>
+        <div class="skill-item" data-skill="Three.js">
+            <i class="fas fa-cube"></i>
+            <span>Three.js</span>
+        </div>
+        </div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Backend Development</h3>
+                <div class="skill-items">
+                    <div class="skill-item" data-skill="Node.js">
+                        <i class="fab fa-node"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="skill-item" data-skill="Express">
+                        <i class="fas fa-server"></i>
+                        <span>Express</span>
+                    </div>
+                    <div class="skill-item" data-skill="MongoDB">
+                        <i class="fas fa-database"></i>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="skill-item" data-skill="SQL">
+                        <i class="fas fa-database"></i>
+                        <span>SQL</span>
+                    </div>
+                    <div class="skill-item" data-skill="RESTful APIs">
+                        <i class="fas fa-network-wired"></i>
+                        <span>RESTful APIs</span>
+                    </div>
+                    <div class="skill-item" data-skill="GraphQL">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>GraphQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>DevOps & Tools</h3>
+                <div class="skill-items">
+                    <div class="skill-item" data-skill="Git">
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-item" data-skill="Docker">
+                        <span>Docker</span>
+                    </div>
+                    <div class="skill-item " data-skill="CI/CD">
+                        <span>CI/CD</span>
+                    </div>
+                    <div class="skill-item" data-skill="AWS">
+                        <span>AWS</span>
+                    </div>
+                    <div class="skill-item" data-skill="Netlify">
+                        <span>Netlify</span>
+                    </div>
+                    <div class="skill-item" data-skill="Vercel">
+                        <span>Vercel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://github.com/Mindenry" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.facebook.com/m1xndenry/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/m1xnd_pxw/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <p>Designed & Built by Peerawit Lakhampa</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
