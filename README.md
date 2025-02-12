@@ -10,7 +10,7 @@
 - ✅ **Download Resume Button**: ดาวน์โหลดเรซูเม่ได้ง่าย
 
 ## 🚀 Live Demo
-🔗 **[คลิกที่นี่เพื่อดู Demo](https://mindenry.github.io/3Dportfolio/)** (กรุณาอัปเดตลิงก์หลังจาก Deploy)
+🔗 **[คลิกที่นี่เพื่อดู Demo](https://mindenry.github.io/3Dportfolio/)** 
 
 ## 🛠️ Technologies Used
 - **HTML**: โครงสร้างเว็บพอร์ตโฟลิโอ
