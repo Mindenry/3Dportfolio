@@ -25,102 +25,135 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="navbar-content">
-            <div class="logo">
-                <div class="logo-3d">
-                    <span>P</span>
-                    <span>L</span>
+<nav class="navbar">
+    <div class="navbar-content">
+        <div class="logo">
+            <div class="logo-3d">
+                <div class="cube">
+                    <div class="face front">P</div>
+                    <div class="face back">P</div>
+                    <div class="face right">L</div>
+                    <div class="face left">L</div>
+                    <div class="face top">PL</div>
+                    <div class="face bottom">PL</div>
                 </div>
             </div>
-            <div class="nav-links">
-                <a href="#about" class="nav-link"><span>01.</span> About</a>
-                <a href="#projects" class="nav-link"><span>02.</span> Projects</a>
-                <a href="#skills" class="nav-link"><span>03.</span> Skills</a>
-                <button class="theme-toggle" aria-label="Toggle theme">
-                    <div class="theme-toggle-icons">
+        </div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link"><span class="nav-number">01.</span> About</a>
+            <a href="#projects" class="nav-link"><span class="nav-number">02.</span> Projects</a>
+            <a href="#skills" class="nav-link"><span class="nav-number">03.</span> Skills</a>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <div class="theme-toggle-sphere">
+                    <div class="sphere-inner">
                         <i class="fas fa-sun"></i>
                         <i class="fas fa-moon"></i>
                     </div>
-                    <div class="theme-toggle-particles"></div>
-                </button>
-            </div>
-            <button class="mobile-menu" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                </div>
             </button>
         </div>
-    </nav>
+        <button class="mobile-menu" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay">
-        <div class="mobile-menu-content">
-            <a href="#about" class="mobile-nav-link"><span>01.</span> About</a>
-            <a href="#projects" class="mobile-nav-link"><span>02.</span> Projects</a>
-            <a href="#skills" class="mobile-nav-link"><span>03.</span> Skills</a>
+<div class="mobile-menu-overlay">
+    <div class="mobile-menu-content">
+        <a href="#about" class="mobile-nav-link"><span>01.</span> About</a>
+        <a href="#projects" class="mobile-nav-link"><span>02.</span> Projects</a>
+        <a href="#skills" class="mobile-nav-link"><span>03.</span> Skills</a>
+    </div>
+</div>
+
+    <!-- Hero Section with Matrix Rain and 3D Elements -->
+<section class="hero" id="home">
+    <canvas id="matrix-rain"></canvas>
+    <div class="hero-content">
+        <div class="terminal-wrapper">
+            <div class="terminal-header">
+                <span class="terminal-button"></span>
+                <span class="terminal-button"></span>
+                <span class="terminal-button"></span>
+            </div>
+            <div class="terminal-body">
+                <div class="command-line">
+                    <span class="prompt">peerawitm1xnd@gmail.com:~$</span>
+                    <span class="command typing-effect">whoami</span>
+                </div>
+                <div class="response">
+                    <span class="subtitle console-text">> Initializing profile...</span>
+                    <h1 class="glitch" data-text="Peerawit Lakhampa">Peerawit Lakhampa</h1>
+                </div>
+                <div class="command-line">
+                    <span class="prompt">peerawitm1xnd@gmail.com:~$</span>
+                    <span class="command typing-effect">cat skills.txt</span>
+                </div>
+                <div class="response">
+                    <h3 class="console-text">> Frontend Developer | React & Node.js | HTML, CSS, JavaScript | PHP & MySQL | UI/UX Enthusiast</h3>
+                </div>
+                <div class="command-line">
+                    <span class="prompt">peerawitm1xnd@gmail.com:~$</span>
+                    <span class="command typing-effect">cat about.txt</span>
+                </div>
+                <div class="response">
+                    <p class="console-text">
+                        > Passionate about creating stunning and responsive web interfaces.  
+                        > Experienced in PHP, MySQL, and frontend development with HTML, CSS, and JavaScript.  
+                        > Focused on building real-world projects like RentRide and online queue booking systems.  
+                        > Exploring advanced web technologies to enhance user experience.  
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn primary">View Projects <span class="btn-glitch"></span></a>
         </div>
     </div>
-
-    <!-- Hero Section with 3D Background -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="glitch-wrapper">
-                <span class="subtitle">Hi, my name is</span>
-                <h1 class="glitch" data-text="Peerawit Lakhampa">Peerawit Lakhampa</h1>
-            </div>
-            <h2 class="hero-heading typing-animation">I build immersive 3D web experiences.</h2>
-            <p class="hero-description">
-                I'm a frontend developer specializing in building exceptional digital experiences with modern 3D technologies.
-                Currently, I'm focused on creating accessible, interactive, and innovative web applications.
-            </p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn primary">View My Work</a>
-            </div>
-        </div>
-        <div class="hero-3d-container" id="hero-3d-scene"></div>
-        <div class="scroll-indicator">
-            <span>Scroll Down</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
+    <div id="hero-3d-scene"></div>
+    <div class="scroll-indicator">
+        <span class="console-text">scroll.start()</span>
+        <div class="scroll-arrow">▼</div>
+    </div>
+</section>
 
     <!-- About Section with 3D Elements -->
     <section class="section" id="about">
         <div class="container">
             <h2 class="section-heading"><span>01.</span> About Me</h2>
-            <div class="about-content grid-2">
+            <div class="about-content">
                 <div class="about-text">
-                    <p>Hello! My name is Peerawit, and I enjoy creating things that live on the internet. My interest in web development started back in 2015 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!</p>
-                    <p>Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences with a focus on 3D and interactive elements.</p>
+                    <p>Hello! My name is Peerawit Lakhampa, and I am passionate about frontend development and web technologies. My journey into web development started with building simple websites, and over time, I have honed my skills in creating dynamic and interactive user experiences.</p>
+                    <p>Today, I specialize in developing responsive and visually appealing websites using modern web technologies. My focus is on crafting real-world projects, such as RentRide and online queue booking systems, while continuously learning new technologies to enhance user experience.</p>
                     <p>Here are a few technologies I've been working with recently:</p>
                     <ul class="skills-list">
-                        <li>JavaScript (ES6+)</li>
-                        <li>React</li>
-                        <li>Three.js</li>
-                        <li>WebGL</li>
-                        <li>GSAP</li>
-                        <li>TypeScript</li>
-                        <li>Node.js</li>
-                        <li>WebAssembly</li>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>React & Node.js</li>
+                        <li>PHP & MySQL</li>
+                        <li>Bootstrap & Tailwind CSS</li>
+                        <li>Vue.js (Exploring)</li>
+                        <li>Laravel (Exploring)</li>
+                        <li>RESTful APIs</li>
+                        <li>Git & GitHub</li>
+                        <li>Vercel & Render Deployment</li>
                     </ul>
                 </div>
                 <div class="about-image">
-                    <div class="image-wrapper card-3d">
+                    <div class="image-wrapper">
                         <div class="image-3d-effect">
-                            <img src="profile.jpg" alt="Profile picture">
+                            <img src="./profile.jpg" alt="Profile picture">
                             <div class="image-glitch-effect"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="section-background">
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-            </div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
         </div>
     </section>
 
@@ -146,20 +179,18 @@
                         </div>
                         <h3 class="project-title">3D E-commerce Platform</h3>
                         <div class="project-description">
-                            <p>A feature-rich e-commerce platform built with React and Three.js. Includes 3D product visualization, AR product preview, real-time inventory management, payment processing, and an admin dashboard.</p>
+                            <p>An online meeting room reservation system built with React and Express. This platform enables users to book meeting rooms, manage schedules, and track availability in real-time. It features user authentication, role-based access control, and an intuitive admin panel for managing reservations.</p>
                         </div>
                         <ul class="project-tech-list">
                             <li>React</li>
-                            <li>Three.js</li>
-                            <li>WebGL</li>
-                            <li>Node.js</li>
-                            <li>WebXR</li>
                             <li>OracleSQL</li>
+                            <li>Tailwind CSS</li>
+                            <li>JavaScript</li>
                         </ul>
                     </div>
                     <div class="project-image">
                         <div class="image-hover-effect">
-                            <img src="project1.jpg" alt="3D E-commerce Platform screenshot">
+                            <img src="./reserve.png" alt="3D E-commerce Platform screenshot">
                         </div>
                     </div>
                 </article>

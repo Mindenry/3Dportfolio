@@ -759,6 +759,8 @@
         DOM.skillItems = document.querySelectorAll('.skill-item');
         DOM.parallaxElements = document.querySelectorAll('[data-mouse-parallax]');
     };
+
+
     
     // Advanced Theme Toggle JavaScript
 document.addEventListener('DOMContentLoaded', () => {
@@ -1229,6 +1231,27 @@ document.addEventListener('DOMContentLoaded', () => {
         
         window.addEventListener('resize', Utils.debounce(handleResize, 100));
     };
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const skillsList = document.querySelectorAll('.skills-list li');
+
+  skillsList.forEach((skill) => {
+    skill.addEventListener('mousemove', (e) => {
+      const { offsetX, offsetY } = e;
+      const { offsetWidth, offsetHeight } = skill;
+
+      // คำนวณอัตราส่วนให้สัมพันธ์กับขนาดของ element
+      const moveX = (offsetX / offsetWidth - 0.5) * 10; 
+      const moveY = (offsetY / offsetHeight - 0.5) * 10; 
+
+      skill.style.transform = `scale(1.1) translateY(-5px) rotateX(${moveY}deg) rotateY(${moveX}deg)`;
+    });
+
+    skill.addEventListener('mouseleave', () => {
+      skill.style.transform = 'scale(1) translateY(0) rotateX(0) rotateY(0)';
+    });
+  });
+});
 
     // Projects background animation
     const initProjectsBackground = () => {
