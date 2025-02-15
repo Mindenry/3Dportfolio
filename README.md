@@ -10,7 +10,7 @@
 - ✅ **Download Resume Button**: ดาวน์โหลดเรซูเม่ได้ง่าย
 
 ## 🚀 Live Demo
-🔗 **[คลิกที่นี่เพื่อดู Demo](https://mindenry.github.io/3Dportfolio/)** (กรุณาอัปเดตลิงก์หลังจาก Deploy)
+🔗 **[คลิกที่นี่เพื่อดู Demo](https://mindenry.github.io/3Dportfolio/)** 
 
 ## 🛠️ Technologies Used
 - **HTML**: โครงสร้างเว็บพอร์ตโฟลิโอ
@@ -30,8 +30,6 @@
 2. Scroll เพื่อดู Parallax Effects และ Animations
 3. เปลี่ยนระหว่าง **Dark Mode / Light Mode**
 
-## 📝 License
-This project is licensed under the **MIT License**.
 
 ---
 💡 **หมายเหตุ**: โปรเจคนี้เป็น Frontend UI เท่านั้น สามารถนำไปปรับแต่งและเพิ่ม Backend ได้
