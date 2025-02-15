@@ -4,271 +4,329 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peerawit Lakhampa - Creative Frontend Developer</title>
-    <meta name="description" content="Frontend Developer specializing in creating immersive web experiences with modern JavaScript frameworks and creative animations">
+    <meta name="description" content="Frontend Developer specializing in creating immersive 3D web experiences with modern JavaScript frameworks and creative animations">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Mono&display=swap">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-     <!-- Custom Cursor -->
+    <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
     
     <!-- Progress Bar -->
-    <div class="progress-bar"></div>
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="navbar-content">
             <div class="logo">
-                <h3>PL</h3>
+                <div class="logo-3d">
+                    <span>P</span>
+                    <span>L</span>
+                </div>
             </div>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
+                <a href="#about" class="nav-link"><span>01.</span> About</a>
+                <a href="#projects" class="nav-link"><span>02.</span> Projects</a>
+                <a href="#skills" class="nav-link"><span>03.</span> Skills</a>
                 <button class="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
+                    <div class="theme-toggle-icons">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="theme-toggle-particles"></div>
                 </button>
             </div>
             <button class="mobile-menu" aria-label="Menu">
-                <i class="fas fa-bars"></i>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <a href="#about" class="mobile-nav-link"><span>01.</span> About</a>
+            <a href="#projects" class="mobile-nav-link"><span>02.</span> Projects</a>
+            <a href="#skills" class="mobile-nav-link"><span>03.</span> Skills</a>
+        </div>
+    </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with 3D Background -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <span class="subtitle">Hi, my name is</span>
-            <h1>Peerawit Lakhampa</h1>
-            <h2 class="hero-heading">I build things for the web.</h2>
+            <div class="glitch-wrapper">
+                <span class="subtitle">Hi, my name is</span>
+                <h1 class="glitch" data-text="Peerawit Lakhampa">Peerawit Lakhampa</h1>
+            </div>
+            <h2 class="hero-heading typing-animation">I build immersive 3D web experiences.</h2>
             <p class="hero-description">
-                I'm a frontend developer specializing in building exceptional digital experiences.
-                Currently, I'm focused on building accessible, human-centered products.
+                I'm a frontend developer specializing in building exceptional digital experiences with modern 3D technologies.
+                Currently, I'm focused on creating accessible, interactive, and innovative web applications.
             </p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn primary">View My Work</a>
-                <a href="#contact" class="btn secondary">Get In Touch</a>
             </div>
         </div>
-        <div class="hero-background"></div>
+        <div class="hero-3d-container" id="hero-3d-scene"></div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </section>
 
-        <!-- About Section -->
+    <!-- About Section with 3D Elements -->
     <section class="section" id="about">
         <div class="container">
-            <h2>About Me</h2>
+            <h2 class="section-heading"><span>01.</span> About Me</h2>
             <div class="about-content grid-2">
                 <div class="about-text">
                     <p>Hello! My name is Peerawit, and I enjoy creating things that live on the internet. My interest in web development started back in 2015 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!</p>
-                    <p>Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences.</p>
+                    <p>Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences with a focus on 3D and interactive elements.</p>
                     <p>Here are a few technologies I've been working with recently:</p>
                     <ul class="skills-list">
                         <li>JavaScript (ES6+)</li>
                         <li>React</li>
-                        <li>Node.js</li>
+                        <li>Three.js</li>
+                        <li>WebGL</li>
+                        <li>GSAP</li>
                         <li>TypeScript</li>
+                        <li>Node.js</li>
+                        <li>WebAssembly</li>
                     </ul>
                 </div>
                 <div class="about-image">
-                    <div class="image-wrapper">
-                        <img src="profile.jpg" alt="Profile picture">
+                    <div class="image-wrapper card-3d">
+                        <div class="image-3d-effect">
+                            <img src="profile.jpg" alt="Profile picture">
+                            <div class="image-glitch-effect"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="section" id="experience">
-        <div class="container">
-            <h2>Where I've Worked</h2>
-            <div class="experience-tabs">
-                <div class="tab-list">
-                    <button class="tab-button active" data-tab="company1">TechCorp</button>
-                    <button class="tab-button" data-tab="company2">DigitalAgency</button>
-                    <button class="tab-button" data-tab="company3">StartupX</button>
-                </div>
-                <div class="tab-content">
-                    <div class="tab-panel active" id="company1">
-                        <h3>Senior Frontend Developer @ TechCorp</h3>
-                        <p class="date">January 2022 - Present</p>
-                        <ul>
-                            <li>Led the frontend development of a major e-commerce platform serving 1M+ users</li>
-                            <li>Implemented modern web technologies resulting in 40% performance improvement</li>
-                            <li>Mentored junior developers and conducted code reviews</li>
-                        </ul>
-                    </div>
-                    <!-- More experience tabs -->
-                </div>
+        <div class="section-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section with 3D Cards -->
     <section class="section" id="projects">
         <div class="container">
-            <h2>Some Things I've Built</h2>
+            <h2 class="section-heading"><span>02.</span> Some Things I've Built</h2>
             <div class="projects-grid">
-                <article class="project-card featured">
+                <article class="project-card featured card-3d">
                     <div class="project-content">
                         <div class="project-header">
+                            <div class="project-folder">
+                                <i class="far fa-folder-open"></i>
+                            </div>
                             <div class="project-links">
-                                <a href="https://github.com/Mindenry/Reserve_MeetingRoom" target="_blank" rel="noopener noreferrer">
+                                <a href="https://github.com/Mindenry/Reserve_MeetingRoom" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Live Demo">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         </div>
-                        <h3 class="project-title">E-commerce Platform</h3>
+                        <h3 class="project-title">3D E-commerce Platform</h3>
                         <div class="project-description">
-                            <p>A feature-rich e-commerce platform built with React and Node.js. Includes real-time inventory management, payment processing, and an admin dashboard.</p>
+                            <p>A feature-rich e-commerce platform built with React and Three.js. Includes 3D product visualization, AR product preview, real-time inventory management, payment processing, and an admin dashboard.</p>
                         </div>
                         <ul class="project-tech-list">
                             <li>React</li>
+                            <li>Three.js</li>
+                            <li>WebGL</li>
                             <li>Node.js</li>
+                            <li>WebXR</li>
                             <li>OracleSQL</li>
                         </ul>
                     </div>
                     <div class="project-image">
-                        <img src="reserve.png" alt="Project screenshot">
+                        <div class="image-hover-effect">
+                            <img src="project1.jpg" alt="3D E-commerce Platform screenshot">
+                        </div>
                     </div>
                 </article>
-                <!-- More project cards -->
             </div>
+            
+            <div class="more-projects">
+                <h3>Other Noteworthy Projects</h3>
+                <div class="mini-projects-grid">
+                    <div class="mini-project-card card-3d">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <div class="project-folder">
+                                    <i class="far fa-folder-open"></i>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="project-title">Audio Visualizer</h3>
+                            <div class="project-description">
+                                <p>A real-time audio visualizer using WebAudio API and Canvas/WebGL for creating mesmerizing visual effects.</p>
+                            </div>
+                            <ul class="project-tech-list">
+                                <li>WebAudio API</li>
+                                <li>Canvas</li>
+                                <li>WebGL</li>
+                            </ul>
+                        </div>
+                    </div>
+                <div class="show-more">
+                    <a href="https://github.com/Mindenry" target="_blank" rel="noopener noreferrer" class="btn secondary">
+                        View More on GitHub
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="section-background">
+            <div class="projects-background" id="projects-background"></div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section with 3D Elements -->
     <section class="section" id="skills">
         <div class="container">
-            <h2>My Skills</h2>
-            <div class="skills-grid">
+            <h2 class="section-heading"><span>03.</span> My Skills</h2>
+            <div class="skills-wrapper">
                 <div class="skill-category">
                     <h3>Frontend Development</h3>
                     <div class="skill-items">
                         <div class="skill-item" data-skill="HTML5">
                             <i class="fab fa-html5"></i>
                             <span>HTML5</span>
+                            <div class="skill-progress" data-progress="95"></div>
                         </div>
                         <div class="skill-item" data-skill="CSS3">
                             <i class="fab fa-css3-alt"></i>
                             <span>CSS3</span>
-                    </div>
-                    <div class="skill-item" data-skill="JavaScript">
-                        <i class="fab fa-js"></i>
-                        <span>JavaScript</span>
-                </div>
-                <div class="skill-item" data-skill="React">
-                    <i class="fab fa-react"></i>
-                    <span>React</span>
-            </div>
-            <div class="skill-item" data-skill="Sass">
-                <i class="fab fa-sass"></i>
-                <span>Sass</span>
-        </div>
-        <div class="skill-item" data-skill="Bootstrap">
-            <i class="fab fa-bootstrap"></i>
-            <span>Bootstrap</span>
-        </div>
-        <div class="skill-item" data-skill="Tailwind CSS">
-            <i class="fas fa-wind"></i>
-            <span>Tailwind CSS</span>
-        </div>
-        <div class="skill-item" data-skill="TypeScript">
-            <i class="fab fa-js"></i>
-            <span>TypeScript</span>
-        </div>
-        <div class="skill-item" data-skill="Next.js">
-            <i class="fab fa-react"></i>
-            <span>Next.js</span>
-        </div>
-        <div class="skill-item" data-skill="Gatsby">
-            <i class="fab fa-react"></i>
-            <span>Gatsby</span>
-        </div>
-        <div class="skill-item" data-skill="GraphQL">
-            <i class="fas fa-project-diagram"></i>
-            <span>GraphQL</span>
-        </div>
-        <div class="skill-item" data-skill="D3.js">
-            <i class="fas fa-chart-line"></i>
-            <span>D3.js</span>
-        </div>
-        <div class="skill-item" data-skill="Three.js">
-            <i class="fas fa-cube"></i>
-            <span>Three.js</span>
-        </div>
-        </div>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Backend Development</h3>
-                <div class="skill-items">
-                    <div class="skill-item" data-skill="Node.js">
-                        <i class="fab fa-node"></i>
-                        <span>Node.js</span>
-                    </div>
-                    <div class="skill-item" data-skill="Express">
-                        <i class="fas fa-server"></i>
-                        <span>Express</span>
-                    </div>
-                    <div class="skill-item" data-skill="MongoDB">
-                        <i class="fas fa-database"></i>
-                        <span>MongoDB</span>
-                    </div>
-                    <div class="skill-item" data-skill="SQL">
-                        <i class="fas fa-database"></i>
-                        <span>SQL</span>
-                    </div>
-                    <div class="skill-item" data-skill="RESTful APIs">
-                        <i class="fas fa-network-wired"></i>
-                        <span>RESTful APIs</span>
-                    </div>
-                    <div class="skill-item" data-skill="GraphQL">
-                        <i class="fas fa-project-diagram"></i>
-                        <span>GraphQL</span>
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                        <div class="skill-item" data-skill="JavaScript">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
+                        <div class="skill-item" data-skill="React">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                        <div class="skill-item" data-skill="Bootstrap">
+                            <i class="fab fa-bootstrap"></i>
+                            <span>Bootstrap</span>
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                        <div class="skill-item" data-skill="Tailwind CSS">
+                            <i class="fas fa-wind"></i>
+                            <span>Tailwind CSS</span>
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                        <div class="skill-item" data-skill="TypeScript">
+                            <i class="fab fa-js"></i>
+                            <span>TypeScript</span>
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="skill-category">
-                <h3>DevOps & Tools</h3>
-                <div class="skill-items">
-                    <div class="skill-item" data-skill="Git">
-                        <span>Git</span>
+                
+                <div class="skill-category">
+                    <h3>3D & Animation</h3>
+                    <div class="skill-items">
+                        <div class="skill-item" data-skill="Three.js">
+                            <i class="fas fa-cube"></i>
+                            <span>Three.js</span>
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
                     </div>
-                    <div class="skill-item" data-skill="Docker">
-                        <span>Docker</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Backend Development</h3>
+                    <div class="skill-items">
+                        <div class="skill-item" data-skill="Node.js">
+                            <i class="fab fa-node"></i>
+                            <span>Node.js</span>
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                        <div class="skill-item" data-skill="Express">
+                            <i class="fas fa-server"></i>
+                            <span>Express</span>
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                        <div class="skill-item" data-skill="MongoDB">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                            <div class="skill-progress" data-progress="70"></div>
+                        </div>
+                        <div class="skill-item" data-skill="SQL">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                            <div class="skill-progress" data-progress="65"></div>
+                        </div>
                     </div>
-                    <div class="skill-item " data-skill="CI/CD">
-                        <span>CI/CD</span>
-                    </div>
-                    <div class="skill-item" data-skill="AWS">
-                        <span>AWS</span>
-                    </div>
-                    <div class="skill-item" data-skill="Netlify">
-                        <span>Netlify</span>
-                    </div>
-                    <div class="skill-item" data-skill="Vercel">
-                        <span>Vercel</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>DevOps & Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item" data-skill="Git">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                        <div class="skill-item" data-skill="Docker">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                            <div class="skill-progress" data-progress="70"></div>
+                        </div>
+                        <div class="skill-item" data-skill="CI/CD">
+                            <i class="fas fa-code-branch"></i>
+                            <span>CI/CD</span>
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                        <div class="skill-item" data-skill="AWS">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS</span>
+                            <div class="skill-progress" data-progress="65"></div>
+                        </div>
+                        <div class="skill-item" data-skill="Netlify">
+                            <i class="fas fa-cloud"></i>
+                            <span>Netlify</span>
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                        <div class="skill-item" data-skill="Vercel">
+                            <i class="fas fa-cloud"></i>
+                            <span>Vercel</span>
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="section-background">
+            <canvas id="skills-canvas"></canvas>
         </div>
-        </div>
-
     </section>
-
 
     <!-- Footer -->
     <footer class="footer">
